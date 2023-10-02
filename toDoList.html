@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To do List</title>
+    <link href="toDoList.css" rel="stylesheet">
+    <link  rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+      <a href="webIndex.html" target="_blank">
+        <i class="fa-solid fa-house-chimney" style="color: #ffffff; cursor:pointer"></i>
+      </a>
+        <div class="todo-apps">
+        <h2>To Do Lists 
+            <i class="fa-solid fa-pen-to-square"></i>
+        </h2>
+        <div class="row">
+           <div class="form-field">
+            <input type="text" class="form-input" id="input-Box"/>
+            <label for = "input-Box" class ="form-label">Information</label>
+           </div>
+           <button onclick="addTask()">Add</button>
+        </div>
+        <ul  id="list-container">
+           <!--
+             <li class="checked"> <i class="fa-regular fa-circle"></i> task 1</li>
+            <li class="checked"> <i class="fa-regular fa-circle"></i> task 1</li>
+            <li class="checked"> <i class="fa-regular fa-circle"></i> task 1</li>
+            <li class="checked"> <i class="fa-regular fa-circle"></i> task 1</li>
+           -->
+        </ul>
+        </div>
+        <p style=" text-align: center; color:pink;">copyright by Phoebe Home in 2023</p>
+    </div>
+    <script>
+        const inputBox = document.getElementById('input-Box');
+        const listBox = document.getElementById('list-container');
+        function addTask()
+        {
+            //tao the li
+            if(inputBox.value === '')
+            {
+                alert('You must to write something !');
+            }
+        else
+        {
+            let li = document.createElement("li");
+            let icon = document.createElement("i");
+            icon.setAttribute("id","trueIcon");
+            icon.className = "fa-regular fa-circle";
+            //them icon vao li truoc
+            li.appendChild(icon);
+            //them task text vao li
+            li.appendChild(document.createTextNode(inputBox.value));
+            inputBox.value = '';
+            //them wrong
+            let wrong = document.createElement("i");
+            wrong.className = "fa-solid fa-xmark";
+            wrong.setAttribute("id","wrongIcon");
+            li.appendChild(wrong);
+              //them li vao container
+            listBox.appendChild(li);
+        }
+        }
+
+        listBox.addEventListener("click",function(e)
+        {
+            if(e.target.tagName === "LI")
+            {
+                e.target.classList.toggle("checked");
+                let icon = e.target.querySelector(".fa-regular.fa-circle");
+                if(icon)
+                {
+                    icon.classList.replace("fa-regular", "fa-solid");
+                   icon.classList.replace("fa-circle", "fa-circle-check");
+                }
+                else{
+                    icon = e.target.querySelector(".fa-solid.fa-circle-check");
+            if (icon) {
+                icon.classList.replace("fa-solid", "fa-regular");
+                icon.classList.replace("fa-circle-check", "fa-circle");
+                }
+            }
+            }
+            else if(e.target.id === "wrongIcon")
+            {
+                e.target.parentElement.remove();
+            }
+        }, false);
+    </script>   
+</body>
+</html>

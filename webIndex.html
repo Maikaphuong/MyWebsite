@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phoebe</title>
+    <style>
+       @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@600&family=Pacifico&family=Victor+Mono:wght@300&display=swap');
+       /*
+font-family: 'Pacifico', cursive;
+font-family: 'Victor Mono', monospace;
+       */
+        @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@600&family=Lobster&display=swap');
+        .logo
+        {
+            font-family: 'Pacifico', cursive;
+            letter-spacing: 5px;
+            font-size: 25px;
+        }
+      </style>
+      <link href="webIndex.css" rel = "stylesheet">
+</head>
+<body>
+    <nav>
+        <ul class="mainMenu">
+            <li class="logo">
+                <h4>Phoebe</h4>
+            </li>
+            <li class="dropMenu">
+                <div class="tool">
+                    <div class="tool1"></div>
+                    <div class="tool2"></div>
+                    <div class="tool3"></div>
+                </div>
+            </li>
+        </ul>
+        <ul class="subMenu" style="display: none;">
+            <li><a href="webIndex.html">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="toDoList.html">To do lists</a></li>
+            <li><a href="project.html">Projects</a></li>
+        </ul>
+    </nav>
+    <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous">
+    </script>
+    <script>
+        $(document).ready(function() {
+            $('.dropMenu').click(function() {
+                $('.tool').toggleClass('close');
+                $('.subMenu').toggle(); 
+            });
+        });
+    </script>
+    <section id="intro">
+        <h2>Introduction:</h2>
+        <p>
+In the dynamic realm of online shopping and fashion, the website "Phoebe" stands out as a promising platform for fashion enthusiasts and trend-conscious shoppers. This review aims to delve into the various facets of the "Phoebe" website, exploring its user experience, product range, features, and overall appeal.
+        </p>
+        <div class="pictures">
+            <img src="https://i.pinimg.com/564x/35/a1/a5/35a1a5c5593e69db0dfc800a12c5bccc.jpg" alt = "MEOW">
+            <img src="https://i.pinimg.com/564x/00/bc/41/00bc41ad457a73d31574c2414507f927.jpg" alt="panda">
+            <img src="https://i.pinimg.com/564x/84/9a/af/849aafa74aa30a122f0b2ba2a130f54e.jpg" alt = "rabit">
+        </div>
+    </section>
+        <p style="text-align: center; color:brown;">Copyright by Phoebe Home in 2023</p>
+</body>
+</html>

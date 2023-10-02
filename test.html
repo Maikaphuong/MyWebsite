@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black Pink</title>
+    <link href="index.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dosis:wght@600&display=swap" rel="stylesheet">
+<style>
+  img 
+  {
+    width: 100px;
+    height: 100px;
+  }
+</style>
+</head>
+<body>
+    <header>
+        <h1>
+            CONCERT BLACKPINK
+        </h1>
+    </header>
+    <nav>
+        <ul class="mainMenu">
+            <li><a href = "index.html">Trang chủ</a></li>
+            <li class="dropMenu"><a href="#">Hoạt động</a>
+                <ul class="subMenu">
+                    <li><a href="#">Quay số</a></li>
+                    <li><a href="flower.html">Flowers</a></li>
+                    <li><a href="quiz.html">Quiz</a></li>
+                </ul>
+            </li>
+            <li><a href="register.html">Đăng ký</a></li>
+        </ul>
+    </nav>
+    <section>
+        <div class="between-place">
+            <h3 style="text-align:center;color:rgb(165, 42, 73);">Random số ngẫu nhiên</h3> 
+            <div class = "pictures">
+                <img id = "quesMark01" src="https://i.pinimg.com/564x/d3/8a/c6/d38ac63dde07b497cd9aedad0cad9af1.jpg" alt = "question mark" value = "none">
+                <img id = "quesMark02" src="https://i.pinimg.com/564x/d3/8a/c6/d38ac63dde07b497cd9aedad0cad9af1.jpg" alt = "question mark" value = "none">
+                <img id = "quesMark03" src="https://i.pinimg.com/564x/d3/8a/c6/d38ac63dde07b497cd9aedad0cad9af1.jpg" alt = "question mark" value = "none">
+            </div>
+            <div>
+                <button onclick="randomIdol()">Các số ngẫu nhiên</button>
+                <button onclick="resetAgain()">reset</button>
+            </div>
+            <div>
+                <h4>Kết quả của tổng 3 số ngẫu nhiên là</h4>
+                <h6 id="show"></h6>
+            </div>
+            <script>
+                function resetAgain()
+                {
+                    var result = document.getElementById("show");
+                    result.style.display="none";
+                    var images = {url: "https://i.pinimg.com/564x/d3/8a/c6/d38ac63dde07b497cd9aedad0cad9af1.jpg"}; 
+                    document.getElementById("quesMark01").src = images.url;
+                    document.getElementById("quesMark02").src = images.url;
+                    document.getElementById("quesMark03").src = images.url;
+
+                    document.getElementById("quesMark01").setAttribute("value","none");
+                    document.getElementById("quesMark02").setAttribute("value","none");
+                    document.getElementById("quesMark03").setAttribute("value","none");
+                }
+                function randomIdol()
+                {
+                    var array_images = [
+                        {url : "https://images.rawpixel.com/image_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvam9iMjQwLWppbmctbm8tMDAuanBn.jpg",value : "0"},
+                        { url: "https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA2L2pvYjI0MC1qaW5nLW5vLTAxLmpwZw.jpg", value : "1"},
+                        { url: "02.jpg", value : "2"},
+                        { url: "03.jpg", value : "3"},
+                        { url: "https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA2L2pvYjI0MC1qaW5nLW5vLTA0LmpwZw.jpg", value : "4"},
+                        { url: "05.jpg", value : "5"},
+                        { url: "https://images.rawpixel.com/image_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvam9iMjQwLWppbmctbm8tMDYuanBn.jpg", value : "6"},
+                        { url: "07.jpg", value : "7"},
+                        { url: "https://images.rawpixel.com/image_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvam9iMjQwLWppbmctbm8tMDguanBn.jpg", value : "8"},
+                        { url: "https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA2L2pvYjI0MC1qaW5nLW5vLTA5LmpwZw.jpg", value : "9"},
+                    ];
+                    for(var i = 0; i < 3; i++)
+                    {
+                        var index = Math.floor(Math.random() * array_images.length);
+                        var imgaerRandom = array_images[index];
+                        if(i === 0)
+                        {
+                        document.getElementById("quesMark01").src = imgaerRandom.url;
+                        document.getElementById("quesMark01").setAttribute("value",imgaerRandom.value);
+                        }
+                        else if( i=== 1)
+                        {
+                            document.getElementById("quesMark02").src = imgaerRandom.url;
+                            document.getElementById("quesMark02").setAttribute("value",imgaerRandom.value);
+                        }
+                        else
+                        {
+                            document.getElementById("quesMark03").src = imgaerRandom.url;
+                            document.getElementById("quesMark03").setAttribute("value",imgaerRandom.value);
+                        }
+                    }
+                    sumValue();
+                }
+            
+                function sumValue()
+                {
+                    var result = document.getElementById("show");
+                    result.style.display = "block";
+                    var a = document.getElementById("quesMark01").getAttribute("value");
+                    var b = document.getElementById("quesMark02").getAttribute("value");
+                    var c = document.getElementById("quesMark03").getAttribute("value");
+                    document.getElementById("show").innerHTML = parseInt(a)+ parseInt(b)+ parseInt(c);
+                }
+                
+            
+            </script>
+        </div>
+    </section>
+    <footer>
+        <h4>Made by Phoebe Home</h4>
+    </footer>
+</body>
+</html>

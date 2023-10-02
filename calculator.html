@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="projects.css">
+<link rel="stylesheet" href="calculator.css">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Dosis:wght@600&family=Pacifico&family=Roboto+Mono:wght@600&family=Victor+Mono:wght@300&display=swap" rel="stylesheet">
+<!--
+font-family: 'Dosis', sans-serif;
+font-family: 'Pacifico', cursive;
+font-family: 'Roboto Mono', monospace;
+font-family: 'Victor Mono', monospace;
+-->
+</head>
+<body>
+    <header>
+        <h3>Projects</h2>
+        <h4>Phoebe Home</h4>
+    </header>
+    <nav>
+        <ul class="mainMenu">
+            <li>
+                <a href="project.html">About</a>
+            </li>
+            <li class="dropMenu">
+                <a href="#">Exercises</a>
+                <ul class="subMenu">
+                    <li><a href="calculator.html">Calculator</a></li>
+                    <li><a href="caro.html">Caro game</a></li>
+                    <li><a href="random.html">Random</a></li>
+                    <li><a href= "shop.html">Shop</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <section>
+        <div class="left_part">
+            <div class="catFood">
+                <h3 class = "content">Food for cats</h3>
+                <div class="soybean">
+                    <img src="https://tse1.mm.bing.net/th?id=OIP.FC6j_luBN8RfayjhioLAtQHaE9&pid=Api&P=0&h=180" alt ="soybean">
+                    <p>Soybean</p>
+                </div>
+                <div class="dried_carrot">
+                    <img src="https://5.imimg.com/data5/HQ/QP/MY-36444998/freeze-dried-carrot-500x500.jpg" alt ="dried carrot">
+                    <p>Dried carrot</p>
+                </div>
+                <div class="salmon">
+                    <img src="https://tse2.mm.bing.net/th?id=OIP.ebQMmi9fnOwGRqUhtqoazgHaE8&pid=Api&P=0&h=180" alt = "salmon">
+                    <p>salmom</p>
+                </div>
+            </div>
+        </div>
+        <div class="between_part">
+            <h5>Calculator</h5>
+            <div class="container">
+                <form>
+                    <div class = "display">
+                        <input type="text" name = "display" id="display">
+                    </div>
+                    <div class="endLine">
+                        <input type="button" value = "AC">
+                        <input type="button" value = "DE">
+                        <input type="button" value = ".">
+                        <input type="button" value = "/">
+                    </div>
+                    <div class="endLine">
+                        <input type="button" value = "7">
+                        <input type="button" value = "8">
+                        <input type="button" value = "9">
+                        <input type="button" value = "*">
+                    </div>
+                    <div class="endLine">
+                        <input type="button" value = "4">
+                        <input type="button" value = "5">
+                        <input type="button" value = "6">
+                        <input type="button" value = "-">
+                    </div>
+                    <div class="endLine">
+                        <input type="button" value = "1">
+                        <input type="button" value = "2">
+                        <input type="button" value = "3">
+                        <input type="button" value = "+">
+                    </div>
+                    <div class="endLine">
+                        <input type="button" value = "00">
+                        <input type="button" value = "0">
+                        <input type="button" value = "=">
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="right_part">
+            <h3 class = "content">Cats</h3>
+            <div class="kinds_Cat">
+                <div class="kittens">
+                    <img src="http://images6.fanpop.com/image/photos/41500000/Cute-Little-Kitten-kittens-41501030-1088-821.jpg" alt = "kittens">
+                    <p>Kittens</p>
+                </div>
+                <div class="munchkin">
+                    <img src="https://cdn.fotofits.com/petzlover/gallery/img/l/munchkin-kitten-872747.jpg" alt ="munchkin cat">
+                    <p>Munchkin Cat</p>
+                </div>
+                <div class="fluffy">
+                    <img src="https://i.pinimg.com/originals/0f/a3/8d/0fa38d3cfe50dd4bb3599eb30c01d24f.jpg" alt = "Fluffy Cats">
+                    <p>Fluffy Cats</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <script>
+       document.addEventListener('DOMContentLoaded', function() {
+            var displayInput = document.getElementById('display');
+            var array = document.querySelectorAll('input[type="button"]');
+            
+            array.forEach(button => {
+                button.addEventListener('click', function() {
+                   if(button.value == "AC")
+                   {
+                    displayInput.value = "";
+                   }
+                   else if(button.value == "DE")
+                   {
+                    displayInput.value = displayInput.value.toString().slice(0,-1);
+                   }
+                   else if(button.value == "=")
+                   {
+                    try{
+                        displayInput.value = displayInput.value.replace(/^0+(?=\d)/, '');
+                        displayInput.value = eval(displayInput.value);
+                    }
+                    catch(error)
+                    {
+                        displayInput.value = "Error";
+                    }
+                   }
+                   else
+                   {
+                    displayInput.value += button.value;
+                   }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

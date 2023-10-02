@@ -1,0 +1,118 @@
+
+*{
+    padding:0;
+    margin:0;
+}
+body{
+    background-color: #fbe0ff;
+    font-family: 'Victor Mono', monospace;;
+}
+h4
+{
+    transition: all 0.2s linear;
+}
+h4:hover
+{
+    color: #F5BAAF;
+}
+.mainMenu
+{
+    position:relative;
+    background-color:#4e4169;
+    display: flex;
+    justify-content:space-between;
+    color:#ffffff;
+    align-items: center;
+    padding: 0px 30px 0px 300px;
+    min-height: 10vh;
+}
+a
+{
+    color:#FBD1D3;
+    text-decoration: none;
+    font-family: 'Victor Mono', monospace;
+    font-weight: bold;
+}
+.dropMenu
+{
+    width: 25px;
+    height: 20px;
+    cursor: pointer;
+}
+.tool div
+{
+    width:25px;
+    height:2px;
+    background-color:#fcffe7;
+    margin:5px;
+    border-radius: 3px;
+    transition:all 0.3s cubic-bezier(0.25,0.1,0.28,1.54);
+}
+.tool.close
+{
+    margin-top: 10px;
+}
+.tool.close .tool1
+{
+    transform:rotate(45deg);
+    height:5px;
+    margin:0px;
+    padding:0px;
+}
+.tool.close .tool2
+{
+    transform:rotate(-45deg);
+    height:5px;
+    margin:0px;
+    padding:0px;
+}
+.tool.close .tool3
+{
+    display:none;
+}
+li{
+    list-style-type: none;
+}
+.subMenu
+{
+    text-align: center;
+    position: absolute;
+    background-color: #9F81CD;
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.subMenu>li
+{
+    transition:all 0.1s linear;
+    margin:20px;
+    width: 100%;
+    margin:0px;
+    padding:15px;
+}
+.subMenu>li:hover
+{
+    background-color: #655486;
+}
+/*============================================*/
+#intro
+{
+    margin: 100px;
+    margin-bottom:0px;
+    margin-top:50px;
+}
+img
+{
+    width: 200px;
+    height:200px;
+    border-radius: 10px;
+    margin:10px;
+}
+.pictures
+{
+    display:flex;
+    justify-content: center;
+    margin-top:20px;
+}

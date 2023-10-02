@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flower</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Dosis:wght@600&family=Pacifico&family=Roboto+Mono:wght@600&family=Victor+Mono:wght@300&display=swap" rel="stylesheet">
+<!--
+font-family: 'Dosis', sans-serif;
+font-family: 'Pacifico', cursive;
+font-family: 'Roboto Mono', monospace;
+font-family: 'Victor Mono', monospace;
+!-->
+    <link href="shop.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h3>Shop flowers
+            </h3>
+            <h2>Phoebe</h2>
+        </header>
+        <nav>
+            <ul class="mainMenu">
+                <li><a href="webIndex.html">About</a></li>
+                <li class="dropMenu">
+                    <a href="#">Projects</a>
+                    <ul class="subMenu">
+                        <li><a href="calculator.html">Calculator</a></li>
+                        <li><a href="caro.html">Caro game</a></li>
+                        <li><a href="random.html">Random</a></li>
+                        <li><a href= "shop.html">Shop</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <section>
+            <div class="left_part">
+                <form>
+                    <table>
+                        <tr>
+                            <td>Chọn màu chữ</td>
+                            <td><input type="color" id="font-color" onchange="changeF()"></td>
+                        </tr>
+                        <tr>
+                            <td>Chọn màu nền</td>
+                            <td>
+                                <input type="color" id="bg-color" onchange="changeB()">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Chọn màu shadow</td>
+                            <td><input type="color" id="shadow-color" onchange="changeT()"></td>
+                        </tr>
+                        <tr>
+                           <td colspan="2">
+                            <input type="button" value="All" onclick="showCategory('all')">
+                            <input type="button" value="Cat" onclick="showCategory('cat')">
+                            <input type="button" value="Dog" onclick="showCategory('dog')">
+                            <input type="button" value="Hamster" onclick="showCategory('hamster')">
+                           </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+            <div class="right_part">
+                <div class="all">
+                    <div class="cat">
+                        <img src="https://i.pinimg.com/564x/b3/5c/56/b35c563f155e8714921b5660db1ddde0.jpg">
+                        <img src="https://i.pinimg.com/564x/58/e9/87/58e987205a0ecc120188babd45622cc9.jpg">
+                        <img src="https://i.pinimg.com/736x/7e/b2/08/7eb208dbc4bac02227f739b2c77b91d2.jpg">
+                    </div>
+                    <div class="dog">
+                        <img src="https://i.pinimg.com/736x/06/12/5b/06125b01b5949975a898e64c32b2798f.jpg">
+                        <img src="https://i.pinimg.com/736x/06/12/5b/06125b01b5949975a898e64c32b2798f.jpg">
+                        <img src="https://i.pinimg.com/736x/06/12/5b/06125b01b5949975a898e64c32b2798f.jpg">
+                    </div>
+                    <div class="hamster">
+                        <img src="https://i.pinimg.com/564x/76/0e/a6/760ea625c70137f5bc40f2ded2a2b23e.jpg">
+                        <img src="https://i.pinimg.com/564x/76/0e/a6/760ea625c70137f5bc40f2ded2a2b23e.jpg">
+                        <img src="https://i.pinimg.com/564x/76/0e/a6/760ea625c70137f5bc40f2ded2a2b23e.jpg">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script>
+
+        function changeF()
+        {  var Color =  document.getElementById("font-color").value;
+            document.querySelector('header').style.color = Color;
+            document.querySelector('h2').style.color = Color;
+        }
+        function changeB()
+        {  var Color =  document.getElementById("bg-color").value;
+            document.querySelector('header').style.backgroundColor = Color;
+        }
+        function changeT()
+        {
+            var Color = document.getElementById("shadow-color").value;
+            document.querySelector('header').style.textShadow = `2px 2px 4px ${Color}`;
+        }
+        function showCategory(category) {
+            var catImages = document.querySelector(".cat");
+            var dogImages = document.querySelector(".dog");
+            var hamsterImages = document.querySelector(".hamster");
+            if (category === 'all') {
+                catImages.style.display = 'block';
+                dogImages.style.display = 'block';
+                hamsterImages.style.display = 'block';
+            } else {
+                if(category === 'cat')
+                {
+                    catImages.style.display = 'block';
+                    dogImages.style.display = "none";
+                    hamsterImages.style.display = "none";
+                }
+                else if(category === 'dog')
+                {
+                    catImages.style.display = 'none';
+                    dogImages.style.display = "block";
+                    hamsterImages.style.display = "none";
+                }
+                else{
+                    catImages.style.display = 'none';
+                    dogImages.style.display = "none";
+                    hamsterImages.style.display = "block";
+                }
+            }
+        }
+    </script>
+</body>
+</html>

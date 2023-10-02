@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Dosis:wght@600&family=Pacifico&family=Roboto+Mono:wght@600&family=Victor+Mono:wght@300&display=swap" rel="stylesheet">
+<!--
+font-family: 'Dosis', sans-serif;
+font-family: 'Pacifico', cursive;
+font-family: 'Roboto Mono', monospace;
+font-family: 'Victor Mono', monospace;
+-->
+<link href="caro.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h4>Projects</h4>
+            <h2>Phoebe</h2>
+        </header>
+        <nav>
+            <ul class="mainMenu">
+                <li><a href="project.html">About</a></li>
+                <li class="dropMenu">
+                    <a href="#">Projects</a>
+                    <ul class="subMenu">
+                        <li><a href="calculator.html">Caculator</a></li>
+                        <li><a href="caro.html">Tik tac toe</a></li>
+                        <li><a href="random.html">Random</a></li>
+                        <li><a href= "shop.html">Shop</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <h3 style="margin-top:20px; font-size:20px;color:rgb(80, 255, 255);">Tik Tac Toe</h3>
+        <div class="turn_container">
+            <h2 class="turn_for">Turn for</h2>
+            <div class="turn_box">X</div>
+            <div class="turn_box">O</div>
+            <div class="bg"></div>
+        </div>
+        <section class = "main_grid">
+            <div class="box align">0</div>
+            <div class="box align">1</div>
+            <div class="box align">2</div>
+            <div class="box align">3</div>
+            <div class="box align">4</div>
+            <div class="box align">5</div>
+            <div class="box align">6</div>
+            <div class="box align">7</div>
+            <div class="box align">8</div>
+        </section>
+        <h2 id="results" style="display:none;">X WIN</h2>
+        <button id="play-again" style="display:none;" onclick = "resetGame()">Play Again</button>
+        <script src="caro.js"></script>
+    </div>
+</body>
+</html>

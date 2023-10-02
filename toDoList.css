@@ -1,0 +1,139 @@
+*
+{
+    margin :0px;
+    padding:0px;
+    font-family: 'Roboto Mono', monospace;
+    box-sizing:border-box;
+}
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@600&family=Pacifico&family=Roboto+Mono:wght@600&family=Victor+Mono:wght@300&display=swap');
+.container
+{
+    background: linear-gradient(135deg,#563A88,#F5BAAF);
+    width:100%;
+    min-height:100vh;
+    padding:10px;
+}
+.todo-apps
+{
+    width: 100%;
+    max-width: 564px;
+    background-color: rgb(255, 255, 255);
+    margin: 100px auto 20px;
+    padding: 20px;
+    border-radius: 10px;
+}
+.todo-apps h2
+{
+    color: #8f468a;
+    transition: all 0.2s linear;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    margin-bottom:20px;
+}
+.todo-apps h2:hover
+{
+    color:#796fb2;
+}
+.form-field
+{
+    position: relative;
+    flex: 1; /* Take up 80% of the available width */
+    margin-right: 10px;
+}
+.form-label{
+    position: absolute;
+    top:50%;
+    transform: translateY(-50%);
+    left:21px;
+    color:#999;
+    transition: 0.25s ease;
+}
+.form-input
+{
+    font-size: 18px;
+    width: 100%;
+    padding:20px;
+    border-radius:4px;
+    height:50px;
+    border: 3px solid #c1b9de;
+    transition: 0.25s ease;
+}
+.form-input:focus + .form-label{
+    border-color:#563A88;
+    top:0px;
+    left:11px;
+    padding:0 10px;
+    background-color: white;
+    color: #563A88;
+}
+.row
+{
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center; /* Vertically align the content */
+}
+button {
+    width:15%;
+    height: 50px;
+    background-color: #563A88;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.25s ease;
+    transition: 0.2s linear;
+}
+
+button:hover
+{
+    background-color: #7e46ab;
+}
+ul li
+{
+    list-style-type: none;
+    font-size:18px;
+    padding: 12px 8px 12px 20px;
+    cursor:pointer;
+    user-select:none;
+    position: relative;
+}
+ul li::before/* chua click chuot*/
+{
+    content: ""; 
+}
+ul li.checked
+{
+    color:#555;
+    text-decoration: line-through;
+}
+#wrongIcon
+{
+    position: absolute;
+    right:0px;
+    padding:5px;
+    border-radius:50px;
+    transition:all 0.1s linear;
+}
+#wrongIcon:hover
+{
+    background-color: #555;
+    color:white;
+}
+#trueIcon
+{
+    padding-right:20px;
+    cursor:pointer;
+}
+i.fa-solid.fa-house-chimney
+{
+    padding:10px;
+    position: absolute;
+}
+i.fa-solid.fa-house-chimney:hover
+{
+    border: 1px solid white;
+    padding:10px;
+    border-radius:10px;
+}
